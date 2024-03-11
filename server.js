@@ -7,8 +7,10 @@ const schoolRouter = require('./routers/schoolRouter');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const studdentRouter = require('./routers/studdentRouter');
+const cors = require('cors')
 
 require("dotenv").config()
+app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJsdoc({
     definition: {
         openapi: '3.0.0',
