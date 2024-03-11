@@ -40,7 +40,7 @@ app.use(studdentRouter)
 
 console.log("connection in process....");
 mongoose.connect(process.env.MONGOURI).then(() => {
-    app.listen(3000, (err) => {
+    app.listen(process.env.PORT, (err) => {
         if (err) {
             console.log(err);
         } else {
