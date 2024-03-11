@@ -3,7 +3,11 @@ const studdentController = require("../controllers/studdentController")
 const authguard = require("../helper/authGuard")
 
 
-schoolRouter.post('/promos/:promoId/studdents', schoolController.createStuddent)
+studdentRouter.post('/promos/:promoId/students',authguard, studdentController.createStudent)
+studdentRouter.put('/promos/:promoId/students/:studdentId',authguard, studdentController.updateStuddent)
+studdentRouter.delete('/promos/:promoId/students/:studdentId',authguard, studdentController.deleteStudent)
+
+
 
 
 module.exports = studdentRouter

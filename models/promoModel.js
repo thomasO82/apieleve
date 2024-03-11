@@ -16,7 +16,7 @@ const promoSchema = new mongoose.Schema({
     students: [
         {
             type: mongoose.Schema.ObjectId,
-            ref: "Students"
+            ref: "students"
         }
     ],
     startDate: {

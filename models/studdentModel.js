@@ -12,31 +12,23 @@ const studentSchema = new mongoose.Schema({
     }
   },
   lastName: {
-     type: String,
-     required: true,
-     validate: {
+    type: String,
+    required: true,
+    validate: {
       validator: function (value) {
         return /^[a-zA-ZÀ-ÖØ-öø-ÿ]{3,}$/.test(value);
       },
       message: "Entrez un prénom avec des caracteres alphabetique valide"
-    } 
-    },
-  avatar: { 
-    type: String,
-    required: [true, "une image est requise"],
-    validate: {
-      validator: function (value) {
-        return  /\.[0-9a-z]+$/i.test(value);
-    },
     }
-   },
-  age: { 
-    type: Number, 
+  },
+  age: {
+    type: Number,
     required: [true, "l'age est requis"],
-    min: 18, 
-    max: 62 },
+    min: 18,
+    max: 62
+  },
 });
 
-const Student = mongoose.model('Student', studentSchema);
+const Student = mongoose.model('students', studentSchema);
 
 module.exports = Student;

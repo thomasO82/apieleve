@@ -6,6 +6,7 @@ const rateLimit = require('express-rate-limit');
 const schoolRouter = require('./routers/schoolRouter');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const studdentRouter = require('./routers/studdentRouter');
 
 require("dotenv").config()
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJsdoc({
@@ -32,6 +33,7 @@ app.use(rateLimit({
 app.use(express.json())
 app.use(promoRouter)
 app.use(schoolRouter)
+app.use(studdentRouter)
 
 
 console.log("connection in process....");

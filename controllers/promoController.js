@@ -21,7 +21,7 @@ exports.getOnePromo = async (req, res) => {
         if (!existingPromo) {
             res.status(404).json({ message: "Cette ressource n'appartiens pas a votre école" });
         } else {
-            const promo = await promoModel.findById(req.params.id)
+            const promo = await promoModel.findById(req.params.id).populate('students')
             res.status(200).json(promo)
         }
         
