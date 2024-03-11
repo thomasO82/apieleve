@@ -4,7 +4,7 @@ const authguard = require("../helper/authGuard")
 
 
 schoolRouter.post('/school', schoolController.createSchool)
-schoolRouter.get('easteregg', ()=>{
+schoolRouter.get('easteregg', (req, res)=>{
     res.json('GIBRIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIL')
 })
 schoolRouter.get('/me', authguard, schoolController.getMe)
